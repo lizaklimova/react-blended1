@@ -6,10 +6,11 @@ import {
   Statistics,
   ForbesList,
   CryptoHistory,
-} from 'components';
-import data from '../../data/article.json';
-import stats from '../../data/data.json';
-import forbes from "../../data/forbes.json"
+} from "components";
+import data from "../../data/article.json";
+import stats from "../../data/data.json";
+import forbes from "../../data/forbes.json";
+import transactions from "../../data/transactions.json";
 
 const { poster, tag, title, description, name, avatar, postedAt } = data;
 
@@ -17,7 +18,7 @@ export const App = () => {
   return (
     <Section>
       <Container>
-        <Heading marginBottom='50px' textAlign='center'>
+        <Heading marginBottom="50px" textAlign="center">
           Task 1
         </Heading>
         <BlogCard
@@ -29,18 +30,18 @@ export const App = () => {
           avatar={avatar}
           postedAt={postedAt}
         />
-        <Heading marginTop='50px' marginBottom='50px' textAlign='center'>
+        <Heading marginTop="50px" marginBottom="50px" textAlign="center">
           Task 2
         </Heading>
-        <Statistics title='Main Statistics' stats={stats} />
-        <Heading marginTop='50px' marginBottom='50px' textAlign='center'>
+        <Statistics title="Main Statistics" stats={stats} />
+        <Heading marginTop="50px" marginBottom="50px" textAlign="center">
           Task 3
         </Heading>
-        <ForbesList list={forbes}/>
-        <Heading marginTop='50px' marginBottom='50px' textAlign='center'>
+        <ForbesList list={forbes} />
+        <Heading marginTop="50px" marginBottom="50px" textAlign="center">
           Task 4
         </Heading>
-        <CryptoHistory />
+        <CryptoHistory items={transactions} />
       </Container>
     </Section>
   );
