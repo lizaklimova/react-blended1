@@ -9,6 +9,7 @@ import {
 } from 'components';
 import data from '../../data/article.json';
 import stats from '../../data/data.json';
+import forbes from "../../data/forbes.json"
 
 const { poster, tag, title, description, name, avatar, postedAt } = data;
 
@@ -35,7 +36,7 @@ export const App = () => {
         <Heading marginTop='50px' marginBottom='50px' textAlign='center'>
           Task 3
         </Heading>
-        <ForbesList />
+        <ForbesList list={forbes}/>
         <Heading marginTop='50px' marginBottom='50px' textAlign='center'>
           Task 4
         </Heading>
