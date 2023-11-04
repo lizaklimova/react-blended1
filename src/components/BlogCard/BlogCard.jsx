@@ -1,3 +1,4 @@
+import { formatDateToNow } from 'helpers/formatDate';
 import {
   Card,
   CardBody,
@@ -12,7 +13,10 @@ import {
   UserInfo,
   UserName,
   Date,
-} from "./BlogCard.styled";
+} from './BlogCard.styled';
+
+import PropTypes from 'prop-types';
+
 
 export const BlogCard = ({
   poster,
@@ -38,10 +42,20 @@ export const BlogCard = ({
           <Avatar src={avatar} alt={name} />
           <UserInfo>
             <UserName>{name}</UserName>
-            <Date>{postedAt}</Date>
+            <Date>{formatDateToNow(postedAt)}</Date>
           </UserInfo>
         </UserBox>
       </CardFooter>
     </Card>
   );
+};
+
+BlogCard.propTypes = {
+  poster: PropTypes.string.isRequired,
+  tag: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  avatar: PropTypes.string.isRequired,
+  postedAt: PropTypes.string.isRequired,
 };
